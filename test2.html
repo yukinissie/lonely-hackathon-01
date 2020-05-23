@@ -1,0 +1,101 @@
+<head>
+    <script src="js/three.min.js"></script> 
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+    <canvas id="cosmos"></canvas>
+    <script>
+        window.addEventListener('load', init);
+    
+        function init(){
+    
+            //描画領域を変数に格納
+            const cosmos_width = window.innerWidth;
+            const cosmos_height = window.innerHeight;
+        
+            let rot = 0;
+        
+            //sceneを作成
+            const cosmos_scene = new THREE.Scene();
+        
+            //cameraを作成
+            const cosmos_camera = new THREE.PerspectiveCamera(45, cosmos_width / cosmos_height, 1, 2000);
+            cosmos_camera.position.set(0, 0, 1000); 
+                
+        
+            starField();
+            function starField(){
+                const geometry = new THREE.Geometry();
+                const SIZE = 3000;
+                const LENGTH = 20000;
+                for (let i = 0; i < LENGTH; i++){
+                    geometry.vertices.push(
+                        new THREE.Vector3(
+                            SIZE * (Math.random() - 0.5),
+                            SIZE * (Math.random() - 0.5),
+                            SIZE * (Math.random() - 0.5)
+                        )
+                    );
+                }
+                const material = new THREE.PointsMaterial({
+                    color: '0xffffff',
+                    size: 5
+                });
+                const mesh = new THREE.Points(geometry, material);
+                cosmos_scene.add(mesh);
+            }
+        
+        
+            //レンダラーを作成
+            const cosmos_renderer = new THREE.WebGLRenderer({
+                canvas: document.querySelector('#cosmos'),
+                antialias: true
+            });
+            cosmos_renderer.setPixelRatio(window.devicePixelRatio);
+            cosmos_renderer.setSize(cosmos_width, cosmos_height);
+        
+        
+            //初回実行
+            tick();
+        
+            //実行するための関数
+            function tick(){
+                rot += 0.001;
+                    
+                //アニメーション処理
+                const radian = (rot * Math.PI) / 180;
+                cosmos_camera.position.x = Math.sin(radian) * 2000;
+                cosmos_camera.position.z = Math.cos(radian) * 1000;
+                cosmos_camera.lookAt(new THREE.Vector3(0, 0, 0));
+                    
+                //レンダリング
+                cosmos_renderer.render(cosmos_scene, cosmos_camera);
+                
+                //自分自身を呼び続ける
+                requestAnimationFrame(tick);
+            }
+                
+            onResize();
+            window.addEventListener('resize', onResize);
+            function onResize() {
+                const cosmos_width = window.innerWidth;
+                const cosmos_height = window.innerHeight;
+        
+                cosmos_renderer.setPixelRatio(window.devicePixelRatio);
+                cosmos_renderer.setSize(cosmos_width, cosmos_height);
+        
+                cosmos_camera.aspect = cosmos_width / cosmos_height;
+                cosmos_camera.updateProjectionMatrix();
+            }
+        }
+    
+    
+    </script>
+</body>

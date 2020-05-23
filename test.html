@@ -1,4 +1,15 @@
-window.addEventListener('load', init);
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="js/three.min.js"></script> 
+    <script src="js/OrbitControls.js"></script> 
+    <script src="js/GLTFLoader.js"></script> 
+    <script>
+        window.addEventListener('load', init);
         function init() {
             // set window's size
             const meguru_width = 250;
@@ -121,3 +132,19 @@ window.addEventListener('load', init);
         // 参考：
         // https://ryo620.org/2018/02/to-gltf-from-fbx-by-blender/
         // https://note.com/tg_u_ma/n/nce30e89d6279
+        
+    </script>
+</head>
+<body>
+    <div id="main">
+        <div class="planet"><div id="1">planet1</div></div>
+        <div class="planet"><div id="2">planet2</div></div>
+        <div class="planet"><div id="3">planet3</div></div>
+        <div class="planet"><div id="4">planet4</div></div>
+        <div class="planet"><div id="5">planet5</div></div>
+    </div>
+    
+    <canvas id="cosmos"></canvas>
+    <canvas id="meguru"></canvas>
+</body>
+</html>
