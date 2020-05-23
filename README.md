@@ -11,5 +11,19 @@
 - 宇宙の誕生
 - Three.js * Blender
 
-## コンセプト画像
-<img src="./concept.jpg" alt="concept-image" width="200" height="200">
+## コンセプト
+宇宙感ある空間からモダン技術への入り口を回立方体とお届け
+
+## コンセプト画像1
+<img src="./concept.jpg" alt="concept-image" width="300" height="300">
+
+## コンセプト画像2
+![concept-image2](./concept2.png)
+
+## 最低要件
+- 回立方体がそれとなく踊っている
+- 周りにモダン技術（のアイコン）がぷかぷか浮いている
+- アイコンは公式ドキュメントのリンクになっている
+- 2D
+
+
