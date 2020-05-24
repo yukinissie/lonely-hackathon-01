@@ -4,7 +4,6 @@ function init() {
   const meguru_width = 250;
   const meguru_height = 250;
 
-  const meguru_canvas = document.querySelector('#meguru');
   // create a renderer
   const meguru_renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#meguru'),
@@ -38,7 +37,6 @@ function init() {
   const meguru_controls = new THREE.OrbitControls(meguru_camera, meguru_renderer.domElement);
   meguru_controls.autoRotate = true;
   meguru_controls.autoRotateSpeed = 1.0;
-
 
   // create a cosmos
 
@@ -108,7 +106,6 @@ function init() {
     cosmos_camera.position.x = Math.sin(radian) * 2000;
     cosmos_camera.position.z = Math.cos(radian) * 1000;
     cosmos_camera.lookAt(new THREE.Vector3(0, 0, 0));
-
 
     // rendering
     meguru_renderer.render(meguru_scene, meguru_camera);
