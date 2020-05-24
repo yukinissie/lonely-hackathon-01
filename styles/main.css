@@ -1,3 +1,12 @@
+
+* {
+    -webkit-user-select: none;  /* Chrome or Safari */
+    -moz-user-select: none;     /* FireFox */
+    -ms-user-select: none;      /* IE */
+    -o-user-select: none;       /* Opera */
+    user-select: none;
+}
+
 body { margin: 0; }
 /* canvas { display: inline-block; } */
 #main{
@@ -19,6 +28,12 @@ body { margin: 0; }
     position: fixed;
     z-index: 12;
     display: none;
+    cursor: pointer;
+
+}
+
+.planet:hover{
+    box-shadow: 0px 0px 50px aliceblue;
 }
 
 #meguru{
@@ -39,10 +54,10 @@ body { margin: 0; }
     transform: translate(-50%, -50%);
     border-radius: 50%;
     z-index: 11;
+    cursor: pointer;
+
 }
 #meguru_ninja:hover{
     box-shadow: 0px 0px 50px aliceblue;
 }
-.planet:hover{
-    box-shadow: 0px 0px 50px aliceblue;
-}
+

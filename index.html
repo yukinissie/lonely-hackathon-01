@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles/main.css">
-    <script src="js/three.min.js"></script> 
-    <script src="js/OrbitControls.js"></script> 
-    <script src="js/GLTFLoader.js"></script> 
+    <script src="js/three.min.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/GLTFLoader.js"></script>
     <script src="js/index.js"></script>
-    
+    <script>
+        document.onselectstart = function() {
+            return false;
+        }
+    </script>
 </head>
 <body>
     <div class="planet" id="1">planet1</div>
@@ -19,7 +23,7 @@
     <div class="planet" id="5">planet5</div>
 
     <!-- <div id="main"></div> -->
-    
+
     <div id="notice">
         JavaScriptが無効です。有効にする、もしくは対応しているブラウザで利用してください。
     </div>
