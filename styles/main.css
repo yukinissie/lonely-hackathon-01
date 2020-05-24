@@ -16,6 +16,9 @@ body { margin: 0; }
     border-radius: 50%;
     text-align: center;
     line-height: 100px;
+    position: fixed;
+    z-index: 12;
+    display: none;
 }
 
 #meguru{
