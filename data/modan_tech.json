@@ -1,0 +1,20 @@
+[
+    {
+        "id" : "1",
+        "name" : "AWS",
+        "image" : "img/aws.png",
+        "url" : "https://aws.amazon.com/jp/"
+    },
+    {
+        "id" : "2",
+        "name" : "CircleCI",
+        "image" : "img/circleci.png",
+        "url" : "https://circleci.com/"
+    },
+    {
+        "id" : "3",
+        "name" : "Docker",
+        "image" : "img/docker.jpg",
+        "url" : "https://www.docker.com/"
+    }
+]
