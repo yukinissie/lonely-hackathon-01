@@ -47,6 +47,10 @@ body {
 .planet:hover{
     box-shadow: 0px 0px 50px aliceblue;
 }
+.planet:active{
+    box-shadow: none;
+    opacity: 0.9;
+}
 
 #meguru{
     position: fixed;
