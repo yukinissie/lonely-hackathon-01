@@ -47,7 +47,7 @@
                 "id" : "8",
                 "name" : "Elixir",
                 "image" : "img/elixir.jpeg",
-                "url" : "https://elixir-lang.jp/docs.html"
+                "url" : "https://elixir-lang.org/docs.html"
             },
             {
                 "id" : "9",
@@ -104,7 +104,7 @@
                 "id" : "8",
                 "name" : "Elixir",
                 "image" : "img/elixir.jpeg",
-                "url" : "https://elixir-lang.jp/getting-started/introduction.html"
+                "url" : "https://elixir-lang.org/getting-started/introduction.html"
             },
             {
                 "id" : "9",
