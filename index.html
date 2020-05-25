@@ -2,22 +2,191 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body { margin: 0; }
-        canvas { display: block; }
-    </style>
-    <div class="stage" id="stage"></div> 
-    <!-- Three.js本体 --> 
-    <script src="js/three.min.js"></script> 
-    <!-- カメラをコントロールするためのライブラリ -->
-    <script src="js/OrbitControls.js"></script> 
-    <!-- glTFを取り扱うためにライブラリ --> 
-    <script src="js/GLTFLoader.js"></script> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- クローリング拒否のメタタグ -->
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="nofollow">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <title>Meguru Cosmos</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="js/three.min.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/GLTFLoader.js"></script>
     <script src="js/index.js"></script>
+    <script>
+        document.onselectstart = function() {
+            return false;
+        }
+    </script>
+    <style>
+        button {
+            z-index: 14;
+            /* color: white; */
+            position: fixed;
+        }
+
+    </style>
 </head>
 <body>
+    
+    <div class="planet" id="3" onclick="link(3)"></div>
+    <div class="planet" id="2" onclick="link(2)"></div>
+    <div class="planet" id="1" onclick="link(1)"></div>
+    <!-- <div class="planet" id="1" data-toggle="modal" data-target="#tech"></div>
+    <div class="planet" id="2" data-toggle="modal" data-target="#tech"></div>
+    <div class="planet" id="3" data-toggle="modal" data-target="#tech"></div>
+    <div class="planet" id="4"></div>
+    <div class="planet" id="5"></div> -->
+    <!-- <div class="planet" id="6"></div> -->
+    <!-- <div class="planet" id="7">planet7</div>
+    <div class="planet" id="8">planet8</div>
+    <div class="planet" id="9">planet9</div>
+    <div class="planet" id="10">planet10</div>
+    <div class="planet" id="11">planet11</div>
+    <div class="planet" id="12">planet12</div>
+    <div class="planet" id="13">planet13</div>
+    <div class="planet" id="14">planet14</div>
+    <div class="planet" id="15">planet15</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div>
+    <div class="planet" >planet16</div> -->
+
+
+
+    
+    <div id="notice">
+        JavaScriptが無効です。有効にする、もしくは対応しているブラウザで利用してください。
+    </div>
+    
+
+
+
+    <button id="stop" class="enable">stop</button>
+    <button id="start" class="disable">start</button>
+
+    <select name="category" id="category" style="position: fixed; margin-top:40px;">
+    <option value="document" selected>ドキュメント惑星群</option>
+    <option value="helloWorld">helloWorld惑星群</option>
+    </select>
+
+    <!-- Modal -->
+    <div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="popupTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="popupTitle" style="font-family: cursive;">Meguru</h5>
+                </div>
+                <div class="modal-body">
+                    <iframe
+                    title="meguru"
+                    width="200"
+                    height="200"
+                    src="./default/html&css/meguru.html" style="float: left;">
+                    </iframe>
+                    <div class="description">
+                        知る人ぞ知る天才プログラマー。<br>
+                        ハッカソンではその技術力を発揮させるだけでなく、<br>
+                        生まれ持ったユーモアさで人々を魅了させるすごい人。
+                    </div>
+                </div>
+                <div class="modal-footer" style="height: 70px;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="modal fade" id="tech" tabindex="-1" role="dialog" aria-labelledby="techTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="techTitle"><script src="./js/title.js"></script></h5>
+                </div>
+                <div class="modal-body">
+                    <iframe
+                    title="{{meguru}}"
+                    width="200"
+                    height="200"
+                    src="{{./default/html&css/meguru.html}}" style="float: left;">
+                    </iframe>
+                    <div class="description">
+                        {{description}}
+                    </div>
+                </div>
+                <div class="modal-footer" style="height: 70px;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div id="meguru_ninja" data-toggle="modal" data-target="#popup"></div>
+    <canvas id="cosmos"></canvas>
     <canvas id="meguru"></canvas>
+    <script src="js/planet.js"></script>
+    <script src="js/notice.js"></script>
+    <script src="js/renderImages.js"></script>
+    <script src="js/selectPlanet.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script>
+        function link(i) {
+            linkType = category.value;
+            url = modanTechs[linkType][i-1]['url'];
+            window.open(url, '_blank')
+            var planet;
+        }
+        category = document.getElementById("category");
+        linkType = category.value;
+        category.onchange = changeCategory;
+        function changeCategory() {
+            // 変更後のカテゴリを取得
+            linkType = category.value;
+            for(var i=0; i<modanTechs[linkType].length; i++) {
+                planet = document.getElementById(modanTechs[linkType][i]['id']);
+                techImage = document.createElement('img'); 
+                techImage.src = "data/" + modanTechs[linkType][i]['image']; 
+                planet.appendChild(techImage);
+            }
+        }
+    </script>
 </body>
 </html>

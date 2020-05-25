@@ -1,0 +1,102 @@
+
+* {
+    -webkit-user-select: none;  /* Chrome or Safari */
+    -moz-user-select: none;     /* FireFox */
+    -ms-user-select: none;      /* IE */
+    -o-user-select: none;       /* Opera */
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+}
+/* canvas { display: inline-block; } */
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255,0.1);
+    position: fixed;
+    z-index: 10;
+}
+
+
+.planet {
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    border-radius: 50%;
+    text-align: left;
+    line-height: 100px;
+    position: fixed;
+    z-index: 12;
+    display: none;
+    cursor: pointer;
+
+}
+
+.planet > img {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+
+}
+
+.planet:hover{
+    box-shadow: 0px 0px 50px aliceblue;
+}
+.planet:active{
+    box-shadow: none;
+    opacity: 0.9;
+}
+
+#meguru{
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+#meguru_ninja {
+    width: 250px;
+    height: 250px;
+    background-color: rgba(255,255,255,0.1);
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 11;
+    cursor: pointer;
+
+}
+#meguru_ninja:hover{
+    box-shadow: 0px 0px 50px aliceblue;
+}
+
+.enable{
+    display: block;
+}
+
+.disable {
+    display: none;
+}
+
+
+iframe {
+    border: 1px solid black;
+    width: 50%;
+}
+
+.description {
+    background-color: #ffffff;
+    float:right;
+    width:50%;
+    height: 200px;
+    padding: 10px;
+
+
+}
