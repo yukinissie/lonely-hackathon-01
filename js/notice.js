@@ -1,4 +1,3 @@
-
 (function() {
   var notice = document.getElementById('notice');
   var planets = document.querySelectorAll('.planet');

@@ -18,6 +18,42 @@
                 "name" : "Docker",
                 "image" : "img/docker.jpeg",
                 "url" : "https://docs.docker.com/"
+            },
+            {
+                "id" : "4",
+                "name" : "Firebase",
+                "image" : "img/firebase.png",
+                "url" : "https://firebase.google.com/docs/reference?hl=ja"
+            },
+            {
+                "id" : "5",
+                "name" : "Three.js",
+                "image" : "img/threejs.png",
+                "url" : "https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene"
+            },
+            {
+                "id" : "6",
+                "name" : "Ruby",
+                "image" : "img/ruby.png",
+                "url" : "https://www.ruby-lang.org/ja/documentation/"
+            },
+            {
+                "id" : "7",
+                "name" : "Heroku",
+                "image" : "img/heroku.png",
+                "url" : "https://devcenter.heroku.com/categories/reference"
+            },
+            {
+                "id" : "8",
+                "name" : "Elixir",
+                "image" : "img/elixir.jpeg",
+                "url" : "https://elixir-lang.jp/docs.html"
+            },
+            {
+                "id" : "9",
+                "name" : "Rust",
+                "image" : "img/rust.png",
+                "url" : "https://doc.rust-jp.rs/"
             }
         ],
     "helloWorld" :
@@ -39,6 +75,42 @@
                 "name" : "Docker",
                 "image" : "img/docker2.jpg",
                 "url" : "http://docs.docker.jp/engine/userguide/containers/dockerizing.html"
+            },
+            {
+                "id" : "4",
+                "name" : "Firebase",
+                "image" : "img/firebase.png",
+                "url" : "https://firebase.google.com/docs/guides?hl=ja"
+            },
+            {
+                "id" : "5",
+                "name" : "Three.js",
+                "image" : "img/threejs.png",
+                "url" : "https://ics.media/tutorial-three/"
+            },
+            {
+                "id" : "6",
+                "name" : "Ruby",
+                "image" : "img/ruby2.jpeg",
+                "url" : "https://www.ruby-lang.org/ja/documentation/quickstart/"
+            },
+            {
+                "id" : "7",
+                "name" : "Heroku",
+                "image" : "img/heroku.png",
+                "url" : "https://devcenter.heroku.com/start"
+            },
+            {
+                "id" : "8",
+                "name" : "Elixir",
+                "image" : "img/elixir.jpeg",
+                "url" : "https://elixir-lang.jp/getting-started/introduction.html"
+            },
+            {
+                "id" : "9",
+                "name" : "Rust",
+                "image" : "img/rust.png",
+                "url" : "https://doc.rust-jp.rs/book/second-edition/ch01-01-installation.html"
             }
         ]
 }

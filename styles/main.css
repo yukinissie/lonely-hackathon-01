@@ -11,13 +11,22 @@ body {
     margin: 0;
     background-color: black;
 }
-/* canvas { display: inline-block; } */
-#main{
-    height: 100%;
-    width: 100%;
-    background-color: rgba(255, 255, 255,0.1);
+
+
+header {
     position: fixed;
-    z-index: 10;
+    height: 70px;
+    width: 100%;
+    background-color: black;
+    z-index: 20;
+}
+
+.site-logo {
+    color: #ffffff;
+    line-height: 70px;
+    margin-left: 20px;
+    font-size: 24px;
+    font-family: cursive;
 }
 
 

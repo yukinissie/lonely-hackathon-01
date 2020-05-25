@@ -8,29 +8,6 @@ var linkType = "document";
   // request.onreadystatechange = function(){handleHttpResponse(request)};
   request.send();
 
-  // function handleHttpResponse(http)
-  // {
-  //     if (http.readyState == 4)
-  //     {
-  //         if(http.status == 200)
-  //         {
-  //           request.onload = function() {
-  //             var modanTechs = request.response;
-  //             renderImage(modanTechs);
-  //           }
-  //         }
-  //         else{
-
-  //           // エラー処理
-  //         }
-  //     }
-  // }
-
-
-  // request.onload = function() {
-  //   var modanTechs = request.response;
-  //   renderImage(modanTechs);
-  // }
   request.onload = function() {
     modanTechs = request.response;
     renderImage(modanTechs);

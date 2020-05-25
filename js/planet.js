@@ -3,50 +3,8 @@ var planetTimer;
   var ww = window.innerWidth;
   var wh = window.innerHeight;
 
-  // var planet = document.querySelectorAll('.planet');
-
-  // console.log(planet);
-
-  // var maxPlanetLength = 5;
-  // var baseNumber = parseInt(planet.length / maxPlanetLength);
-
-  // if((planet.length % maxPlanetLength) != 0) {
-  //   baseNumber += 1;
-  // }
-
-  // console.log(baseNumber);
-  // console.log(planet[0]);
-  
-
-  // var planets = {
-  //   length: 0,
-
-  //   addElem: function addElem (elem) {
-  //     [].push.call(this, elem);
-  //   }
-  // };
-  // for(var i=0; i<baseNumber; i++) {
-  //   for(var j=0; j<planet.length; j++) {
-  //     planets.addElem(planet[i]);
-  //     count++;
-  //   }
-  // }
-
-
-  // planets.addElem(planet[0]);
-  // planets.addElem(planet[1]);
-
-  // console.log(planets.length);
-  // console.log(planets[0].getBoundingClientRect());
   var planets = document.querySelectorAll('.planet');
-  var planet1 = planets[0];
-  var planet6 = planets[5];
-  var planet11 = planets[10];
-  var planet16 = planets[15];
-
-
-  
-
+  var planet = planets[0];
 
   let startTime = Date.now();
   planetTimer = setInterval(function() {
@@ -55,14 +13,12 @@ var planetTimer;
   }, 20);
 
   function draw(passedTime) {
-    var base_planet_position = planet1.getBoundingClientRect();
-
+    var base_planet_position = planet.getBoundingClientRect();
 
     var mainRevolutionSpeed = 100000;
     var subRevolutionSpeed = 100000;
     var radius = 200;
     var radians = passedTime / mainRevolutionSpeed;
-    var tmpRadius;
     var tmpRadians;
     var unique = 0;
     for (i=0; i<planets.length; i++) {
@@ -74,7 +30,6 @@ var planetTimer;
         unique += 120;
         tmpRadians = radians;
       }
-
 
       move(base_planet_position);
       function move(base_planet_position){
@@ -93,7 +48,6 @@ var planetTimer;
       }
       radius += 120;
       radians += passedTime / subRevolutionSpeed;
-
     }
   }
 
@@ -128,13 +82,8 @@ var planetTimer;
       start.classList.add("disable");
       stop.classList.remove("disable");
       stop.classList.add("enable");
-
       passedTime = Date.now() - startTime;
-
       draw(passedTime);
     }, 20);
   });
-
-  
-  
 })();
