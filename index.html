@@ -24,7 +24,6 @@
         z-index: 14;
         position: fixed;
       }
-
     </style>
   </head>
   <body>
@@ -100,31 +99,31 @@
     </div>
 
     <div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="popupTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="popupTitle" style="font-family: cursive;">Meguru Cube</h5>
-                </div>
-                <div class="modal-body">
-                    <iframe
-                    title="meguru"
-                    width="200"
-                    height="200"
-                    src="./default/html&css/meguru.html" style="float: left;">
-                    </iframe>
-                    <div class="description">
-                        知る人ぞ知る天才立方体。<br>
-                        ハッカソンではその技術力を発揮させるだけでなく、<br>
-                        生まれ持ったユーモアさで人々を魅了させるすごい人。
-                    </div>
-                </div>
-                <div class="modal-footer" style="height: 70px;">
-                    <div>
-                        <div type="button" class="btn btn-secondary" data-dismiss="modal" style="display: block; margin: auto;">Close</div>
-                    </div>
-                </div>
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="popupTitle" style="font-family: cursive;">Meguru Cube</h5>
+          </div>
+          <div class="modal-body">
+            <iframe
+              title="meguru"
+              width="200"
+              height="200"
+              src="./default/html&css/meguru.html" style="float: left;">
+            </iframe>
+            <div class="description">
+              知る人ぞ知る天才立方体。<br>
+              ハッカソンではその技術力を発揮させるだけでなく、<br>
+              生まれ持ったユーモアさで人々を魅了させるすごい人。
             </div>
+          </div>
+          <div class="modal-footer" style="height: 70px;">
+            <div>
+              <div type="button" class="btn btn-secondary" data-dismiss="modal" style="display: block; margin: auto;">Close</div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <div id="meguru_ninja" data-toggle="modal" data-target="#popup"></div>
@@ -140,24 +139,23 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script>
-        function link(i) {
-            linkType = category.value;
-            url = modanTechs[linkType][i-1]['url'];
-            window.open(url, '_blank')
-            var planet;
-        }
-        category = document.getElementById("category");
+      function link(i) {
         linkType = category.value;
-        category.onchange = changeCategory;
-        function changeCategory() {
-            linkType = category.value;
-            for(var i=0; i<modanTechs[linkType].length; i++) {
-                planet = document.getElementById(modanTechs[linkType][i]['id']);
-                techImage = document.createElement('img'); 
-                techImage.src = "data/" + modanTechs[linkType][i]['image']; 
-                planet.appendChild(techImage);
-            }
+        url = modanTechs[linkType][i-1]['url'];
+        window.open(url, '_blank');
+      }
+      category = document.getElementById("category");
+      linkType = category.value;
+      category.onchange = changeCategory;
+      function changeCategory() {
+        linkType = category.value;
+        for(var i=0; i<modanTechs[linkType].length; i++) {
+          planet = document.getElementById(modanTechs[linkType][i]['id']);
+          techImage = document.createElement('img'); 
+          techImage.src = "data/" + modanTechs[linkType][i]['image']; 
+          planet.appendChild(techImage);
         }
+      }
     </script>
   </body>
 </html>
