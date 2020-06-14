@@ -53,6 +53,7 @@
 
 ## 使用技術
 - Three.js
+- Blender
 - bootstrap
 - 生JavaScript
 - Amazon EC2（手動デプロイ）etc..
