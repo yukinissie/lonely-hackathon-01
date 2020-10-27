@@ -56,5 +56,6 @@
 - Blender
 - bootstrap
 - 生JavaScript
-- Amazon EC2（手動デプロイ）etc..
+- ~Amazon EC2（手動デプロイ）etc..~
+- AWS Amplify（2020/10/26に移植しました）
 
