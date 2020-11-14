@@ -5,8 +5,9 @@ var planetTimer;
 
   var planets = document.querySelectorAll('.planet');
   var planet = planets[0];
+  var initialTime = 200000;
 
-  let startTime = Date.now();
+  let startTime = Date.now() - initialTime;
   planetTimer = setInterval(function () {
     let passedTime = Date.now() - startTime;
     draw(passedTime);
