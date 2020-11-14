@@ -7,7 +7,7 @@ function init() {
   // create a renderer
   const meguru_renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#meguru'),
-    antialias: true
+    antialias: true,
   });
   meguru_renderer.setSize(meguru_width, meguru_height);
   meguru_renderer.setClearColor(0xffffff, 1.0);
@@ -18,7 +18,12 @@ function init() {
   const meguru_scene = new THREE.Scene({});
 
   // create a camera and set it
-  const meguru_camera = new THREE.PerspectiveCamera(50, meguru_width / meguru_height, 1, 100);
+  const meguru_camera = new THREE.PerspectiveCamera(
+    50,
+    meguru_width / meguru_height,
+    1,
+    100
+  );
   meguru_camera.position.set(0, 2.6, 3.7);
 
   // create a environment_light and set it
@@ -34,7 +39,10 @@ function init() {
   });
 
   // OrbitControls の追加
-  const meguru_controls = new THREE.OrbitControls(meguru_camera, meguru_renderer.domElement);
+  const meguru_controls = new THREE.OrbitControls(
+    meguru_camera,
+    meguru_renderer.domElement
+  );
   meguru_controls.autoRotate = true;
   meguru_controls.autoRotateSpeed = 1.0;
 
@@ -49,15 +57,20 @@ function init() {
   const cosmos_scene = new THREE.Scene();
 
   //cameraを作成
-  const cosmos_camera = new THREE.PerspectiveCamera(45, cosmos_width / cosmos_height, 1, 2000);
+  const cosmos_camera = new THREE.PerspectiveCamera(
+    45,
+    cosmos_width / cosmos_height,
+    1,
+    2000
+  );
   cosmos_camera.position.set(0, 0, 1000);
 
   starField();
-  function starField(){
+  function starField() {
     const geometry = new THREE.Geometry();
     const SIZE = 3000;
     const LENGTH = 20000;
-    for (let i = 0; i < LENGTH; i++){
+    for (let i = 0; i < LENGTH; i++) {
       geometry.vertices.push(
         new THREE.Vector3(
           SIZE * (Math.random() - 0.5),
@@ -68,7 +81,7 @@ function init() {
     }
     const material = new THREE.PointsMaterial({
       color: '0xffffff',
-      size: 5
+      size: 5,
     });
     const mesh = new THREE.Points(geometry, material);
     cosmos_scene.add(mesh);
@@ -77,7 +90,7 @@ function init() {
   //レンダラーを作成
   const cosmos_renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#cosmos'),
-    antialias: true
+    antialias: true,
   });
   cosmos_renderer.setPixelRatio(window.devicePixelRatio);
   cosmos_renderer.setSize(cosmos_width, cosmos_height);

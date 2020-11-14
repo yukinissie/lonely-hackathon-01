@@ -1,5 +1,5 @@
 var planetTimer;
-(function() {
+(function () {
   var ww = window.innerWidth;
   var wh = window.innerHeight;
 
@@ -7,7 +7,7 @@ var planetTimer;
   var planet = planets[0];
 
   let startTime = Date.now();
-  planetTimer = setInterval(function() {
+  planetTimer = setInterval(function () {
     let passedTime = Date.now() - startTime;
     draw(passedTime);
   }, 20);
@@ -21,10 +21,10 @@ var planetTimer;
     var radians = passedTime / mainRevolutionSpeed;
     var tmpRadians;
     var unique = 0;
-    for (i=0; i<planets.length; i++) {
-      if(i%5==0 && i==0){
+    for (i = 0; i < planets.length; i++) {
+      if (i % 5 == 0 && i == 0) {
         tmpRadians = radians;
-      } else if(i%5==0) {
+      } else if (i % 5 == 0) {
         radians = tmpRadians;
         radius = 200;
         unique += 120;
@@ -32,19 +32,17 @@ var planetTimer;
       }
 
       move(base_planet_position);
-      function move(base_planet_position){
-        planets[i].style.left = (
-          getCircleX(radians + unique, radius)
-          + (ww / 2)
-          - (base_planet_position.width / 2)
-        ) 
-        + 'px';
-        planets[i].style.top = (
-          getCircleY(radians + unique, radius)
-          + (wh / 2)
-          - (base_planet_position.height / 2)
-        )
-        + 'px';
+      function move(base_planet_position) {
+        planets[i].style.left =
+          getCircleX(radians + unique, radius) +
+          ww / 2 -
+          base_planet_position.width / 2 +
+          'px';
+        planets[i].style.top =
+          getCircleY(radians + unique, radius) +
+          wh / 2 -
+          base_planet_position.height / 2 +
+          'px';
       }
       radius += 120;
       radians += passedTime / subRevolutionSpeed;
@@ -67,21 +65,21 @@ var planetTimer;
   }
 
   const stop = document.getElementById('stop');
-  const start =  document.getElementById('start');
-  stop.addEventListener('click', event => {
-    stop.classList.remove("enable");
-    stop.classList.add("disable");
-    start.classList.remove("disable");
-    start.classList.add("enable");
+  const start = document.getElementById('start');
+  stop.addEventListener('click', (event) => {
+    stop.classList.remove('enable');
+    stop.classList.add('disable');
+    start.classList.remove('disable');
+    start.classList.add('enable');
 
     clearInterval(planetTimer);
   });
-  start.addEventListener('click', event => {
-    planetTimer = setInterval(function() {
-      start.classList.remove("enable");
-      start.classList.add("disable");
-      stop.classList.remove("disable");
-      stop.classList.add("enable");
+  start.addEventListener('click', (event) => {
+    planetTimer = setInterval(function () {
+      start.classList.remove('enable');
+      start.classList.add('disable');
+      stop.classList.remove('disable');
+      stop.classList.add('enable');
       passedTime = Date.now() - startTime;
       draw(passedTime);
     }, 20);
