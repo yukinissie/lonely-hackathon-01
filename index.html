@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5, shrink-to-fit=no">
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0.5, shrink-to-fit=no"
+    />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
 
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" />
 
-    <title>Meguru Cosmos</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <title>sample</title>
+    <link rel="stylesheet" href="styles/main.css" />
     <script src="js/threejs/three.min.js"></script>
     <script src="js/threejs/GLTFLoader.js"></script>
     <script src="js/threejs/OrbitControls.js"></script>
     <script src="js/index.js"></script>
-    <script src="https://kit.fontawesome.com/f1e5378528.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/f1e5378528.js"
+      crossorigin="anonymous"
+    ></script>
     <script>
-      document.onselectstart = function() {
+      document.onselectstart = function () {
         return false;
-      }
+      };
     </script>
     <style>
       button {
@@ -28,12 +39,10 @@
     </style>
   </head>
   <body>
-    <header>
-      <div class="site-logo">
-        Meguru Cosmos
-      </div>
-    </header>
-    
+    <!-- <header>
+      <div class="site-logo">Meguru Cosmos</div>
+    </header> -->
+
     <div class="planet" id="9" onclick="link(9)"></div>
     <div class="planet" id="8" onclick="link(8)"></div>
     <div class="planet" id="7" onclick="link(7)"></div>
@@ -43,36 +52,63 @@
     <div class="planet" id="3" onclick="link(3)"></div>
     <div class="planet" id="2" onclick="link(2)"></div>
     <div class="planet" id="1" onclick="link(1)"></div>
-    
+
     <div id="notice">
       JavaScriptが無効です。有効にする、もしくは対応しているブラウザで利用してください。
     </div>
-    
-    <button id="stop" class="enable" style="margin-top: 70px;">stop</button>
-    <button id="start" class="disable" style="margin-top: 70px;">start</button>
 
-    <select name="category" id="category" style="position: fixed; margin-top:110px; z-index: 16;">
+    <!-- <button id="stop" class="enable" style="margin-top: 70px">stop</button>
+    <button id="start" class="disable" style="margin-top: 70px">start</button>
+
+    <select
+      name="category"
+      id="category"
+      style="position: fixed; margin-top: 110px; z-index: 16"
+    >
       <option value="helloWorld" selected>helloWorld惑星群</option>
       <option value="document">ドキュメント惑星群</option>
-    </select>
-
-    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#siteInfo" style="margin-top: 140px;">
+    </select> -->
+    <!-- 
+    <button
+      type="button"
+      class="btn btn-light"
+      data-toggle="modal"
+      data-target="#siteInfo"
+      style="margin-top: 140px"
+    >
       ?
-    </button>
-    <div class="modal fade" id="siteInfo" tabindex="-1" role="dialog" aria-labelledby="popupTitle" aria-hidden="true">
+    </button> -->
+    <div
+      class="modal fade"
+      id="siteInfo"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="popupTitle"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="siteInfoTitle" style="font-family: cursive; margin: auto;">このサイトについて</h5>
+            <h5
+              class="modal-title"
+              id="siteInfoTitle"
+              style="font-family: cursive; margin: auto"
+            >
+              このサイトについて
+            </h5>
           </div>
           <div class="modal-body">
-            <p style="text-align: center;">
-              とある田舎の大学生がハッカソンにて、<br>
-              1人でドキドキしながら作ったものです。<br>
-              モダンな技術の惑星が回っています。<br>
-              いろんな技術と"Hello, world!"して、<br>
-              生の技術をものにしていきましょう！<br>
-              <a href="https://twitter.com/search?q=%231%E4%BA%BA%E3%83%8F%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3&src=typeahead_click" target="_blank">#1人ハッカソン</a>
+            <p style="text-align: center">
+              とある田舎の大学生がハッカソンにて、<br />
+              1人でドキドキしながら作ったものです。<br />
+              モダンな技術の惑星が回っています。<br />
+              いろんな技術と"Hello, world!"して、<br />
+              生の技術をものにしていきましょう！<br />
+              <a
+                href="https://twitter.com/search?q=%231%E4%BA%BA%E3%83%8F%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3&src=typeahead_click"
+                target="_blank"
+                >#1人ハッカソン</a
+              >
             </p>
             <!-- <blockquote class="twitter-tweet">
               <p lang="ja" dir="ltr">やらせていただきます！笑[プチ開催]ハックツハッカソン~ONLINE~ に参加を申し込みました！ <a href="https://t.co/NUVlPxhhtD">https://t.co/NUVlPxhhtD</a><a href="https://twitter.com/hashtag/1%E4%BA%BA%E3%83%8F%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#1人ハッカソン</a>
@@ -81,69 +117,117 @@
             </blockquote>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
             <blockquote class="twitter-tweet" data-lang="ja">
-              <p lang="ja" dir="ltr">ハッカソン優勝しました！🎉🎉<br>
-                <br>
-                回回回回回回回回回回回回回回回<br>
-                <br>
-                先ほど、<a href="https://twitter.com/hashtag/%E8%BF%91%E5%A4%A7LT?src=hash&amp;ref_src=twsrc%5Etfw">#近大LT</a> にて、<a href="https://twitter.com/hashtag/1%E4%BA%BA%E3%83%8F%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#1人ハッカソン</a> の優勝を、<br>
-                いただきました！！<br>
-                めっちゃうれしいぃぃぃ！！！！<br>
-                <br>
-                回回回回回回回回回回回回回回回<br>
+              <p lang="ja" dir="ltr">
+                ハッカソン優勝しました！🎉🎉<br />
+                <br />
+                回回回回回回回回回回回回回回回<br />
+                <br />
+                先ほど、<a
+                  href="https://twitter.com/hashtag/%E8%BF%91%E5%A4%A7LT?src=hash&amp;ref_src=twsrc%5Etfw"
+                  >#近大LT</a
+                >
+                にて、<a
+                  href="https://twitter.com/hashtag/1%E4%BA%BA%E3%83%8F%E3%83%83%E3%82%AB%E3%82%BD%E3%83%B3?src=hash&amp;ref_src=twsrc%5Etfw"
+                  >#1人ハッカソン</a
+                >
+                の優勝を、<br />
+                いただきました！！<br />
+                めっちゃうれしいぃぃぃ！！！！<br />
+                <br />
+                回回回回回回回回回回回回回回回<br />
                 ハッカソンURL↓
-                <a href="https://t.co/o4ZwTpth37">https://t.co/o4ZwTpth37</a><br>
+                <a href="https://t.co/o4ZwTpth37">https://t.co/o4ZwTpth37</a
+                ><br />
                 近大LT↓
                 <a href="https://t.co/tgSRIQM430">https://t.co/tgSRIQM430</a>
               </p>
-              &mdash; Yuki Nishi (@yukinissie) <a href="https://twitter.com/yukinissie/status/1265231306578726915?ref_src=twsrc%5Etfw">2020年5月26日</a>
+              &mdash; Yuki Nishi (@yukinissie)
+              <a
+                href="https://twitter.com/yukinissie/status/1265231306578726915?ref_src=twsrc%5Etfw"
+                >2020年5月26日</a
+              >
             </blockquote>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            <br>
-            <p style="text-align: center;">
-              製作者 ニッシー☆<br>
-              デプロイ日 2020年5月26日<br>
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+            <br />
+            <p style="text-align: center">
+              製作者 ニッシー☆<br />
+              デプロイ日 2020年5月26日<br />
               クローズ 2020年6月初旬（予定）
             </p>
-            <div style="margin-bottom: 20px; text-align: center;">
+            <div style="margin-bottom: 20px; text-align: center">
               <a href="https://github.com/yukinissie/lonely-hackathon-01">
-                <i class="fab fa-github" style="font-size: 32px; color: black;"></i>
+                <i
+                  class="fab fa-github"
+                  style="font-size: 32px; color: black"
+                ></i>
               </a>
             </div>
             <div>
-              <div type="button" class="btn btn-secondary" data-dismiss="modal" style="display: block; margin: auto;">
+              <div
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                style="display: block; margin: auto"
+              >
                 Close
               </div>
             </div>
           </div>
-          <div class="modal-footer" style="height: 70px; margin:auto;">
+          <div class="modal-footer" style="height: 70px; margin: auto">
             Copy Right (C) 2020 yukinissie.com All Rights Reserved.
           </div>
         </div>
       </div>
     </div>
 
-    <div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="popupTitle" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="popup"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="popupTitle"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="popupTitle" style="font-family: cursive;">Meguru Cube</h5>
+            <h5
+              class="modal-title"
+              id="popupTitle"
+              style="font-family: cursive"
+            >
+              Meguru Cube
+            </h5>
           </div>
           <div class="modal-body">
             <iframe
               title="meguru"
               width="200"
               height="200"
-              src="./default/html&css/meguru.html" style="float: left;">
+              src="./default/html&css/meguru.html"
+              style="float: left"
+            >
             </iframe>
             <div class="description">
-              知る人ぞ知る天才立方体。<br>
-              ハッカソンではその技術力を発揮させるだけでなく、<br>
+              知る人ぞ知る天才立方体。<br />
+              ハッカソンではその技術力を発揮させるだけでなく、<br />
               生まれ持ったユーモアさで人々を魅了させるすごい人。
             </div>
           </div>
-          <div class="modal-footer" style="height: 70px;">
+          <div class="modal-footer" style="height: 70px">
             <div>
-              <div type="button" class="btn btn-secondary" data-dismiss="modal" style="display: block; margin: auto;">Close</div>
+              <div
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                style="display: block; margin: auto"
+              >
+                Close
+              </div>
             </div>
           </div>
         </div>
@@ -159,25 +243,37 @@
     <script src="js/selectPlanet.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
     <script>
       function link(i) {
         linkType = category.value;
-        url = modanTechs[linkType][i-1]['url'];
-        window.open(url, '_blank');
+        url = modanTechs[linkType][i - 1]["url"];
+        window.open(url, "_blank");
       }
       category = document.getElementById("category");
       linkType = category.value;
       category.onchange = changeCategory;
       function changeCategory() {
         linkType = category.value;
-        for(var i=0; i<modanTechs[linkType].length; i++) {
-          planet = document.getElementById(modanTechs[linkType][i]['id']);
-          techImage = document.createElement('img'); 
-          techImage.src = "data/" + modanTechs[linkType][i]['image']; 
-          planet.appendChild(techImage);
+        for (var i = 0; i < modanTechs[linkType].length; i++) {
+          planet = document.getElementById(modanTechs[linkType][i]["id"]);
+          techImage = document.createElement("img");
+          techImage.src = "data/" + modanTechs[linkType][i]["image"];
+          // planet.appendChild(techImage);
         }
       }
     </script>

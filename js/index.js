@@ -1,4 +1,4 @@
-window.addEventListener('load', init);
+window.addEventListener("load", init);
 function init() {
   // set window's size
   const meguru_width = 250;
@@ -6,7 +6,7 @@ function init() {
 
   // create a renderer
   const meguru_renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('#meguru'),
+    canvas: document.querySelector("#meguru"),
     antialias: true,
   });
   meguru_renderer.setSize(meguru_width, meguru_height);
@@ -33,7 +33,7 @@ function init() {
   // gltf形式の３Dモデル（Blender）の読み込み
   // urlはhttp通信
   const meguru_gltf_loader = new THREE.GLTFLoader();
-  const url = '3d-models/meguru.gltf';
+  const url = "3d-models/meguru.gltf";
   meguru_gltf_loader.load(url, (gltf) => {
     meguru_scene.add(gltf.scene);
   });
@@ -80,7 +80,7 @@ function init() {
       );
     }
     const material = new THREE.PointsMaterial({
-      color: '0xffffff',
+      color: "0xffffff",
       size: 5,
     });
     const mesh = new THREE.Points(geometry, material);
@@ -88,16 +88,16 @@ function init() {
   }
 
   //レンダラーを作成
-  const cosmos_renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('#cosmos'),
-    antialias: true,
-  });
-  cosmos_renderer.setPixelRatio(window.devicePixelRatio);
-  cosmos_renderer.setSize(cosmos_width, cosmos_height);
+  // const cosmos_renderer = new THREE.WebGLRenderer({
+  //   canvas: document.querySelector("#cosmos"),
+  //   antialias: true,
+  // });
+  // cosmos_renderer.setPixelRatio(window.devicePixelRatio);
+  // cosmos_renderer.setSize(cosmos_width, cosmos_height);
 
   // 画面サイズが変わった時の処理
   onResize();
-  window.addEventListener('resize', onResize);
+  window.addEventListener("resize", onResize);
   function onResize() {
     const cosmos_width = window.innerWidth;
     const cosmos_height = window.innerHeight;
@@ -122,7 +122,7 @@ function init() {
 
     // rendering
     meguru_renderer.render(meguru_scene, meguru_camera);
-    cosmos_renderer.render(cosmos_scene, cosmos_camera);
+    // cosmos_renderer.render(cosmos_scene, cosmos_camera);
 
     meguru_controls.update();
     requestAnimationFrame(tick);
